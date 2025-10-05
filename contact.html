@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <title>Liên hệ</title>
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--icon-->
+    <!--Nào có CSS thì bỏ vô-->
+  </head>
+  <body>
+    <!--Header-->
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="images/Logo_KNK.png"
+              alt="KNK Jewelry Store Logo"
+              height="90"
+            />
+          </a>
+        </div>
+
+        <ul class="nav-menu">
+          <li class="dropdown">
+            <a href="#">Sản phẩm</a>
+            <ul class="dropdown-menu">
+              <li><a href="rings.html">Nhẫn</a></li>
+              <li><a href="earrings.html">Khuyên tai</a></li>
+              <li><a href="bracelets.html">Vòng tay</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">Về chúng tôi</a></li>
+          <li><a href="contact.html">Liên hệ</a></li>
+        </ul>
+
+        <div class="nav-icons">
+          <a href="#" class="search-icon"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></a>
+
+          <a href="cart.html" class="cart-icon">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-count">0</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="contact-info-section">
+        <div class="container">
+          <h2>Liên hệ với chúng tôi</h2>
+        </div>
+        <div class="container">
+          <div class="contact-info">
+            <ul>
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:info@knkjewelry.com">info@knkjewelry.com</a>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <a href="tel:0912345678">0912 345 678</a> &nbsp;|&nbsp;
+                <a href="tel:0876543210">0876 543 210</a>
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>69 Lê Duẩn, Quận 1, TP.HCM</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-clock"></i>
+                <span>08:00 - 19:00 (Thứ Hai - Chủ Nhật)</span>
+              </li>
+              <li>
+                <a
+                  href="https://facebook.com/knkjewelry"
+                  target="_blank"
+                  aria-label="Facebook"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="https://instagram.com/knkjewelry"
+                  target="_blank"
+                  aria-label="Instagram"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="contact-form-section">
+        <div class="container">
+          <h2>Bạn cần hỗ trợ?</h2>
+          <p class="contact-form-desc">
+            Vui lòng điền thông tin dưới đây, chúng tôi sẽ liên hệ lại trong
+            thời gian sớm nhất.
+          </p>
+          <form
+            class="contact-form"
+            action="#"
+            method="post"
+            autocomplete="off"
+          >
+            <div class="form-group">
+              <label for="customer-name">Họ và tên</label>
+              <input
+                type="text"
+                id="customer-name"
+                name="customer-name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="customer-phone">Số điện thoại</label>
+              <input
+                type="tel"
+                id="customer-phone"
+                name="customer-phone"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="customer-email">Email</label>
+              <input
+                type="email"
+                id="customer-email"
+                name="customer-email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <div
+                class="radio-group"
+                style="display: flex; flex-direction: column; gap: 6px"
+              >
+                <label style="font-weight: 500; margin-bottom: 2px"
+                  >Bạn có phải là doanh nghiệp?</label
+                >
+                <label>
+                  <input
+                    type="radio"
+                    id="is-business-yes"
+                    name="is-business"
+                    value="yes"
+                    required
+                  />
+                  Có
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    id="is-business-no"
+                    name="is-business"
+                    value="no"
+                    required
+                  />
+                  Không
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="enquiries">Chi tiết yêu cầu (Tuỳ chọn)</label>
+              <textarea id="enquiries" name="enquiries" rows="4"></textarea>
+            </div>
+            <button type="submit">Gửi yêu cầu</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <!--Footer-->
+    <footer>
+      <div class="footer-top">
+        <h3>Kết nối với chúng tôi</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com/knkjewelry"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://instagram.com/knkjewelry"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>KNK JEWELRY</h4>
+          <ul>
+            <li><i class="fa-solid fa-envelope"></i> info@knkjewelry.com</li>
+            <li><i class="fas fa-phone"></i> 0912 345 678</li>
+            <li><i class="fas fa-phone"></i> 0876 543 210</li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i> 69 Lê Duẩn, Quận 1, TP.HCM
+            </li>
+            <li><b>Giờ mở cửa:</b> 08:00 - 19:00</li>
+            <li>(Thứ Hai - Chủ Nhật)</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Về chúng tôi</h4>
+          <ul>
+            <li><a href="about.html">Câu chuyện KNK</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="rings.html">Nhẫn</a></li>
+            <li><a href="earrings.html">Khuyên tai</a></li>
+            <li><a href="bracelets.html">Vòng tay</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hợp tác</h4>
+          <ul>
+            <li><a href="contact.html">Liên hệ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-logo">
+          <img src="images/Logo_KNK_white.png" alt="KNK Jewelry Store Logo" />
+        </div>
+        <p>&copy; 2025 KNK Jewelry Store. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
