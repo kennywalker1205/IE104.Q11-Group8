@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width initial-scale=1.0" />
     <title>Liên hệ</title>
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -55,54 +55,44 @@
       </nav>
     </header>
     <main>
-      <section class="contact-info-section">
-        <div class="container">
-          <h2>Liên hệ với chúng tôi</h2>
-          <div class="contact-info">
-            <ul>
-              <li>
-                <i class="fa-solid fa-envelope"></i>
-                <a href="mailto:info@knkjewelry.com">info@knkjewelry.com</a>
-              </li>
-              <li>
-                <i class="fas fa-phone"></i>
-                <a href="tel:0912345678">0912 345 678</a> &nbsp;|&nbsp;
-                <a href="tel:0876543210">0876 543 210</a>
-              </li>
-              <li>
-                <i class="fas fa-map-marker-alt"></i>
-                <span>69 Lê Duẩn, Quận 1, TP.HCM</span>
-              </li>
-              <li>
-                <i class="fa-solid fa-clock"></i>
-                <span>08:00 - 19:00 (Thứ Hai - Chủ Nhật)</span>
-              </li>
-              <li>
-                <a
-                  href="https://facebook.com/knkjewelry"
-                  target="_blank"
-                  aria-label="Facebook"
-                >
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a
-                  href="https://instagram.com/knkjewelry"
-                  target="_blank"
-                  aria-label="Instagram"
-                >
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </li>
-            </ul>
+      <section class="contact-section">
+        <h1>Liên hệ với chúng tôi</h1>
+        <p class="intro">
+          Sự hài lòng của bạn là nguồn cảm hứng để KNK Jewelry không ngừng hoàn
+          thiện chất lượng sản phẩm và dịch vụ.
+        </p>
+
+        <div class="contact-info">
+          <div class="info-text">
+            <div>
+              <i class="fa fa-map-marker-alt"></i><strong> Địa chỉ:</strong> 69
+              Lê Duẩn, Quận 1, TP.HCM
+            </div>
+            <div>
+              <i class="fa-solid fa-clock"></i
+              ><strong> Thời gian làm việc:</strong> Thứ Hai đến Chủ Nhật (08:00
+              - 19:00)
+            </div>
+            <div>
+              <i class="fa fa-phone"></i><strong> Điện thoại:</strong> 0912 345
+              678 | 0876 543 210
+            </div>
+            <div>
+              <i class="fa fa-envelope"></i
+              ><strong> Email:</strong> contact@knkjewelry.com
+            </div>
+          </div>
+
+          <div class="info-banner">
+            <img src="images/Logo_KNK_banner.png" alt="KNK Contact" />
           </div>
         </div>
-      </section>
-      <section class="contact-form-section">
-        <div class="container">
-          <h2>Bạn cần hỗ trợ?</h2>
-          <p class="contact-form-desc">
+
+        <div class="contact-form-section">
+          <h2>Đóng góp & Phản hồi</h2>
+          <p class="intro">
             Vui lòng điền thông tin dưới đây, chúng tôi sẽ liên hệ lại trong
-            thời gian sớm nhất.
+            thời gian sớm nhất!
           </p>
           <form
             class="contact-form"
@@ -110,67 +100,51 @@
             method="post"
             autocomplete="off"
           >
-            <div class="form-group">
-              <label for="customer-name">Họ và tên</label>
+            <div class="form-row">
               <input
                 type="text"
-                id="customer-name"
-                name="customer-name"
+                name="fullName"
+                placeholder="Họ và tên"
                 required
               />
-            </div>
-            <div class="form-group">
-              <label for="customer-phone">Số điện thoại</label>
               <input
                 type="tel"
-                id="customer-phone"
-                name="customer-phone"
+                name="phone"
+                placeholder="Số điện thoại"
                 required
               />
+              <input type="email" name="email" placeholder="Email" required />
             </div>
-            <div class="form-group">
-              <label for="customer-email">Email</label>
-              <input
-                type="email"
-                id="customer-email"
-                name="customer-email"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <div
-                class="radio-group"
-                style="display: flex; flex-direction: column; gap: 6px"
-              >
-                <label style="font-weight: 500; margin-bottom: 2px"
-                  >Bạn có phải là doanh nghiệp?</label
-                >
-                <label>
-                  <input
-                    type="radio"
-                    id="is-business-yes"
-                    name="is-business"
-                    value="yes"
-                    required
-                  />
-                  Có
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    id="is-business-no"
-                    name="is-business"
-                    value="no"
-                    required
-                  />
-                  Không
-                </label>
+
+            <div class="form-row business-row">
+              <label class="radio-label">Bạn có phải là doanh nghiệp?</label>
+              <div class="radio-buttons">
+                <input
+                  type="radio"
+                  id="business-yes"
+                  name="is-business"
+                  value="yes"
+                />
+                <label for="business-yes" class="radio-btn">Có</label>
+
+                <input
+                  type="radio"
+                  id="business-no"
+                  name="is-business"
+                  value="no"
+                />
+                <label for="business-no" class="radio-btn">Không</label>
               </div>
             </div>
-            <div class="form-group">
-              <label for="enquiries">Chi tiết yêu cầu (Tuỳ chọn)</label>
-              <textarea id="enquiries" name="enquiries" rows="4"></textarea>
+
+            <div class="form-row full-width">
+              <textarea
+                name="description"
+                placeholder="Quý khách hãy mô tả chi tiết hơn về nhu cầu của mình..."
+                rows="5"
+              ></textarea>
             </div>
+
             <button type="submit">Gửi yêu cầu</button>
           </form>
         </div>
