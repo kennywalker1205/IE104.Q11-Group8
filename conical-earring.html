@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khuyên tai Nón Lá</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--icon-->
+    <!--Nào có CSS thì bỏ vô-->
+  </head>
+  <body>
+    <!--Header-->
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="images/Logo_KNK.png"
+              alt="KNK Jewelry Store Logo"
+              height="90"
+            />
+          </a>
+        </div>
+
+        <ul class="nav-menu">
+          <li class="dropdown">
+            <a href="products-overview.html">Sản phẩm</a>
+            <ul class="dropdown-menu">
+              <li><a href="rings.html">Nhẫn</a></li>
+              <li><a href="earrings.html">Khuyên tai</a></li>
+              <li><a href="bracelets.html">Vòng tay</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">Về chúng tôi</a></li>
+          <li><a href="contact.html">Liên hệ</a></li>
+        </ul>
+
+        <div class="nav-icons">
+          <a href="#" class="search-icon"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></a>
+
+          <a href="cart.html" class="cart-icon">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-count">0</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!--Main Content-->
+    <main>
+      <section class="product-path-section">
+        <nav class="breadcrumb">
+          <a href="index.html">Trang chủ</a>
+          <span> / </span>
+          <a href="rings.html">Nhẫn</a>
+          <span> / </span>
+          <span>Khuyên tai Nón Lá</span>
+          <!--Tên sản phẩm-->
+        </nav>
+      </section>
+
+      <section class="product-container">
+        <div class="product-gallery">
+          <div class="main-image-container">
+            <!--Ảnh chính-->
+            <img
+              class="main-image"
+              id="mainImage"
+              src="images/Conical-hat-earrings.png"
+              alt="Khuyên tai Nón Lá KNK"
+            />
+          </div>
+
+          <div class="thumbnail-list">
+            <!--Ảnh phụ (góc chính)-->
+            <img
+              class="active"
+              src="images/Conical-hat-earrings.png"
+              alt="Main_angle"
+              onclick="changeImage(this)"
+            />
+
+            <!--Ảnh phụ (side)-->
+            <img
+              src="images/Products-detail/Conical-earring-side.png"
+              alt="Top_angle"
+              onclick="changeImage(this)"
+            />
+
+            <!--Ảnh phụ (góc cận)-->
+            <img
+              src="images/Products-detail/Conical-earring-display.png"
+              alt="Bottom_angle"
+              onclick="changeImage(this)"
+            />
+
+            <!--Ảnh phụ (chân dung)-->
+            <img
+              src="images/Products-detail/Conical-earring-potrait.png"
+              alt="On_hand"
+              onclick="changeImage(this)"
+            />
+          </div>
+        </div>
+
+        <div class="product-info">
+          <h1 class="product-title">Khuyên tai Nón Lá KNK</h1>
+          <div class="product-price">
+            <span class="current-price">2.200.000 VNĐ</span>
+            <span class="original-price">3.300.000 VNĐ</span>
+            <span class="discount-tag">-34%</span>
+          </div>
+          <div class="product-options">
+            <label style="margin-top: 20px">Số lượng:</label>
+            <div class="quantity-box">
+              <button onclick="decreaseQty()">-</button>
+              <input type="number" id="quantity" value="1" min="1" />
+              <button onclick="increaseQty()">+</button>
+            </div>
+          </div>
+
+          <button class="btn add-to-cart">Thêm vào giỏ hàng</button>
+        </div>
+
+        <div class="product-details">
+          <div class="accordion-item">
+            <button class="accordion">Mô tả sản phẩm</button>
+            <div class="panel">
+              <p>
+                Khuyên tai Nón Lá KNK là sự kết hợp tinh tế giữa nét truyền thống và
+                phong cách hiện đại. Được chế tác từ bạc cao cấp 925, bông tai
+                mang hình dáng nón lá truyền thống của Việt Nam, tượng trưng cho
+                vẻ đẹp dịu dàng và thanh lịch của người phụ nữ. Thiết kế nhẹ nhàng
+                và tinh xảo, bông tai này không chỉ là món trang sức mà còn là
+                biểu tượng văn hóa, phù hợp để diện trong các dịp đặc biệt hay
+                hàng ngày.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion">Chính sách bảo hành</button>
+            <div class="panel">
+              <ul>
+                <li>Bảo hành 12 tháng cho lỗi kỹ thuật hoặc sản xuất.</li>
+                <li>Miễn phí làm sạch và đánh bóng trọn đời</li>
+                <li>Bảo hành 6 tháng thay khóa mới</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--Footer-->
+    <footer>
+      <div class="footer-top">
+        <h3>Kết nối với chúng tôi</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com/knkjewelry"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://instagram.com/knkjewelry"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>KNK JEWELRY</h4>
+          <ul>
+            <li><i class="fa-solid fa-envelope"></i> info@knkjewelry.com</li>
+            <li><i class="fas fa-phone"></i> 0912 345 678</li>
+            <li><i class="fas fa-phone"></i> 0876 543 210</li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i> 69 Lê Duẩn, Quận 1, TP.HCM
+            </li>
+            <li><b>Giờ mở cửa:</b> 08:00 - 19:00</li>
+            <li>(Thứ Hai - Chủ Nhật)</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Về chúng tôi</h4>
+          <ul>
+            <li><a href="about.html">Câu chuyện KNK</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="rings.html">Nhẫn</a></li>
+            <li><a href="earrings.html">Khuyên tai</a></li>
+            <li><a href="bracelets.html">Vòng tay</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hợp tác</h4>
+          <ul>
+            <li><a href="contact.html">Liên hệ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-logo">
+          <img src="images/Logo_KNK_white.png" alt="KNK Jewelry Store Logo" />
+        </div>
+        <p>&copy; 2025 KNK Jewelry Store. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

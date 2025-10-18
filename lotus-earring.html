@@ -2,8 +2,8 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width initial-scale=1.0" />
-    <title>Liên hệ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khuyên tai Hoa Sen</title>
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
     <link
       rel="stylesheet"
@@ -54,102 +54,112 @@
         </div>
       </nav>
     </header>
-    <main>
-      <section class="contact-section">
-        <h1>Liên hệ với chúng tôi</h1>
-        <p class="intro">
-          Sự hài lòng của bạn là nguồn cảm hứng để KNK Jewelry không ngừng hoàn
-          thiện chất lượng sản phẩm và dịch vụ.
-        </p>
 
-        <div class="contact-info">
-          <div class="info-text">
-            <div>
-              <i class="fa fa-map-marker-alt"></i><strong> Địa chỉ:</strong> 69
-              Lê Duẩn, Quận 1, TP.HCM
-            </div>
-            <div>
-              <i class="fa-solid fa-clock"></i
-              ><strong> Thời gian làm việc:</strong> Thứ Hai đến Chủ Nhật (08:00
-              - 19:00)
-            </div>
-            <div>
-              <i class="fa fa-phone"></i><strong> Điện thoại:</strong> 0912 345
-              678 | 0876 543 210
-            </div>
-            <div>
-              <i class="fa fa-envelope"></i
-              ><strong> Email:</strong> contact@knkjewelry.com
-            </div>
+    <!--Main Content-->
+    <main>
+      <section class="product-path-section">
+        <nav class="breadcrumb">
+          <a href="index.html">Trang chủ</a>
+          <span> / </span>
+          <a href="rings.html">Nhẫn</a>
+          <span> / </span>
+          <span>Khuyên tai Hoa Sen</span>
+          <!--Tên sản phẩm-->
+        </nav>
+      </section>
+
+      <section class="product-container">
+        <div class="product-gallery">
+          <div class="main-image-container">
+            <!--Ảnh chính-->
+            <img
+              class="main-image"
+              id="mainImage"
+              src="images/Sen-Earrings.png"
+              alt="Khuyên tai Hoa Sen KNK"
+            />
           </div>
 
-          <div class="info-banner">
-            <img src="images/Logo_KNK_banner.png" alt="KNK Contact" />
+          <div class="thumbnail-list">
+            <!--Ảnh phụ (góc chính)-->
+            <img
+              class="active"
+              src="images/Sen-Earrings.png"
+              alt="Main_angle"
+              onclick="changeImage(this)"
+            />
+
+            <!--Ảnh phụ (side)-->
+            <img
+              src="images/Products-detail/Sen-earring-side.jpg"
+              alt="Top_angle"
+              onclick="changeImage(this)"
+            />
+
+            <!--Ảnh phụ (góc cận)-->
+            <img
+              src="images/Products-detail/Sen-earring-display.png"
+              alt="Bottom_angle"
+              onclick="changeImage(this)"
+            />
+
+            <!--Ảnh phụ (chân dung)-->
+            <img
+              src="images/Products-detail/Sen-earring-potrait.jpg"
+              alt="On_hand"
+              onclick="changeImage(this)"
+            />
           </div>
         </div>
 
-        <div class="contact-form-section">
-          <h2>Đóng góp & Phản hồi</h2>
-          <p class="intro">
-            Vui lòng điền thông tin dưới đây, chúng tôi sẽ liên hệ lại trong
-            thời gian sớm nhất!
-          </p>
-          <form
-            class="contact-form"
-            action="#"
-            method="post"
-            autocomplete="off"
-          >
-            <div class="form-row">
-              <input
-                type="text"
-                name="fullName"
-                placeholder="Họ và tên"
-                required
-              />
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Số điện thoại"
-                required
-              />
-              <input type="email" name="email" placeholder="Email" required />
+        <div class="product-info">
+          <h1 class="product-title">Khuyên tai Hoa Sen KNK</h1>
+          <div class="product-price">
+            <span class="current-price">2.500.000 VNĐ</span>
+            <span class="original-price">3.500.000 VNĐ</span>
+            <span class="discount-tag">-30%</span>
+          </div>
+          <div class="product-options">
+            <label style="margin-top: 20px">Số lượng:</label>
+            <div class="quantity-box">
+              <button onclick="decreaseQty()">-</button>
+              <input type="number" id="quantity" value="1" min="1" />
+              <button onclick="increaseQty()">+</button>
             </div>
+          </div>
 
-            <div class="form-row business-row">
-              <label class="radio-label">Bạn có phải là doanh nghiệp?</label>
-              <div class="radio-buttons">
-                <input
-                  type="radio"
-                  id="business-yes"
-                  name="is-business"
-                  value="yes"
-                />
-                <label for="business-yes" class="radio-btn">Có</label>
+          <button class="btn add-to-cart">Thêm vào giỏ hàng</button>
+        </div>
 
-                <input
-                  type="radio"
-                  id="business-no"
-                  name="is-business"
-                  value="no"
-                />
-                <label for="business-no" class="radio-btn">Không</label>
-              </div>
+        <div class="product-details">
+          <div class="accordion-item">
+            <button class="accordion">Mô tả sản phẩm</button>
+            <div class="panel">
+              <p>
+                Khuyên tai Hoa Sen KNK được chế tác tinh xảo từ bạc cao cấp 925,
+                mang biểu tượng của sự thanh khiết và tâm linh trong văn hóa
+                Việt Nam. Thiết kế lấy cảm hứng từ hoa sen nở rộ, tượng trưng cho
+                vẻ đẹp thuần khiết và sự phát triển vượt qua khó khăn. Sản phẩm
+                phù hợp để tôn vinh vẻ đẹp tự nhiên và phong cách cá nhân của
+                người đeo.
+              </p>
             </div>
+          </div>
 
-            <div class="form-row full-width">
-              <textarea
-                name="description"
-                placeholder="Quý khách hãy mô tả chi tiết hơn về nhu cầu của mình..."
-                rows="5"
-              ></textarea>
+          <div class="accordion-item">
+            <button class="accordion">Chính sách bảo hành</button>
+            <div class="panel">
+              <ul>
+                <li>Bảo hành 12 tháng cho lỗi kỹ thuật hoặc sản xuất.</li>
+                <li>Miễn phí làm sạch và đánh bóng trọn đời</li>
+                <li>Bảo hành 6 tháng thay khóa mới</li>
+              </ul>
             </div>
-
-            <button type="submit">Gửi yêu cầu</button>
-          </form>
+          </div>
         </div>
       </section>
     </main>
+
     <!--Footer-->
     <footer>
       <div class="footer-top">
