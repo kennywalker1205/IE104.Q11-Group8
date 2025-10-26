@@ -106,13 +106,12 @@ header {
 .navbar .dropdown-menu::before {
   content: "";
   position: absolute;
-  top: -8px;
+  top: -7px;
   left: 50%;
   transform: translateX(-50%) rotate(45deg);
   width: 14px;
   height: 14px;
   background-color: #FFFDF8;
-  box-shadow: -2px -2px 6px rgba(0, 0, 0, 0.05);
   z-index: -1;
 }
 
