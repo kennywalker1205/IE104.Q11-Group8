@@ -1,0 +1,137 @@
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 20px 60px;
+  background-color: #f6f3eb;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+/* Hero Section */
+.about-hero {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.about-title-img {
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  text-align: center;
+  font-size: 16px;
+  color: #3A2820;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #3A2820;
+  transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+  color: #7A8A3F;
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: justify;
+  padding: 40px 0;
+}
+
+.about-container {
+  max-width: 850px;
+  width: 100%;
+  background-color: #fffdf8;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.about-title {
+  font-family: "Prata", sans-serif;
+  font-size: 28px;
+  color: #395144;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-container p {
+  line-height: 1.8;
+  color: #395144;
+  font-size: 18px;
+  margin-bottom: 28px;
+}
+
+.authority {
+  text-align: right;
+  margin-right: 60px;
+  font-family: "Prata";
+  font-weight: bold;
+}
+
+/* Quote Section */
+.about-quote {
+  text-align: center;
+}
+
+.about-quote-img {
+  max-width: 850px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02); 
+}
+
+/* CTA Section */
+.about-cta {
+  text-align: center;
+}
+
+.cta-container {
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.cta-container p {
+  font-size: 19px;
+  color: #395144;
+  margin-bottom: 50px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #3A2820;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    padding: 80px 16px;
+  }
+
+  .about-title {
+    font-size: 26px;
+  }
+
+  .about-quote-img {
+    max-width: 90%;
+  }
+}

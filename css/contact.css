@@ -1,4 +1,3 @@
-/* ====== KHUNG CHÍNH ====== */
 main {
   max-width: 1200px;
   margin: 0 auto;
@@ -18,7 +17,7 @@ h1 {
 
 p.intro {
   color: #395144;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
   margin-bottom: 40px;
 }
@@ -99,7 +98,7 @@ p.intro {
 }
 
 .contact-form {
-  background: #F6F3EB;
+  background: #f6f3eb;
   border-radius: 10px;
   padding: 60px 30px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
@@ -120,9 +119,9 @@ select,
 textarea {
   width: 100%;
   padding: 14px 16px;
-  border: 1px solid #C7B36B;
+  border: 1px solid #c7b36b;
   border-radius: 8px;
-  background: #FFFDF8;
+  background: #fffdf8;
   font-size: 17px;
   color: #395144;
   font-family: "SVN-Gilroy", sans-serif;
@@ -133,7 +132,7 @@ input:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  border-color: #7A8A3F;
+  border-color: #7a8a3f;
   box-shadow: 0 0 0 2px rgba(136, 156, 99, 0.3);
 }
 
@@ -167,22 +166,25 @@ textarea:focus {
   text-align: center;
   padding: 10px 0;
   border-radius: 15px;
-  background-color: #FFFDF8;
+  background-color: #fffdf8;
   color: #395144;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: "SVN-Gilroy", sans-serif;
-  border: 2px solid #C7B36B;
+  border: 2px solid #c7b36b;
 }
 
 /* Hover */
 .radio-btn:hover {
-  background-color: #7A8A3F;
-  color: #FFF;
-  border: 2px solid #7A8A3F;
+  background-color: #395144;
+  color: #fff;
+  border: 2px solid #395144;
 }
 
 /* Khi được chọn */
+.radio-btn:active {
+  transform: scale(0.95);
+}
 .radio-buttons input[type="radio"]:checked + .radio-btn {
   background-color: #395144;
   color: #fff;
@@ -215,6 +217,9 @@ button[type="submit"]:hover {
   color: #395144;
 }
 
+button[type="submit"]:active {
+  transform: scale(0.98);
+}
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
