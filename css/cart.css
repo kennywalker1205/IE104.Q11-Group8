@@ -38,15 +38,6 @@ main {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.delivery-info {
-  min-height: 100%;
-}
-
-.cart-info {
-  position: sticky;
-  top: 20px;
-}
-
 .delivery-info h2,
 .payment-method h2,
 .cart-info h2,
@@ -84,6 +75,12 @@ main {
   gap: 20px;
 }
 
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -94,6 +91,12 @@ main {
   font-size: 14px;
   font-weight: 600;
   color: #333;
+}
+
+.form-group label .required {
+  color: #e74c3c;
+  font-weight: 700;
+  margin-left: 2px;
 }
 
 .form-group label .optional {
@@ -186,6 +189,7 @@ main {
   display: flex;
   gap: 15px;
   align-items: flex-start;
+  position: relative;
 }
 
 .cart-item img {
@@ -208,8 +212,34 @@ main {
   gap: 8px;
 }
 
+.delete-item-btn {
+  background: none;
+  border: 0.5px solid #dedede;
+  color: #e74c3c;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 8px;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.delete-item-btn:hover {
+  background-color: #e74c3c;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+  transform: scale(1.1);
+}
+
+.delete-item-btn:active {
+  transform: scale(0.95);
+}
+
 .item-details h3 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   margin: 0;
 }
@@ -226,7 +256,7 @@ main {
 }
 
 .item-details .price {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: #395144;
 }
@@ -483,6 +513,11 @@ main {
   .delivery-info,
   .cart-info {
     padding: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .cart-item {
