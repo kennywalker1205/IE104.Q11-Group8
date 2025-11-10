@@ -12,8 +12,8 @@
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  gap: 18px;
-  padding: 24px 28px;
+  gap: 24px;
+  padding: 28px 36px;
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -39,8 +39,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 }
 
 .service-icon img {
@@ -62,7 +62,7 @@
 
 .service-text h3 {
   margin: 0 0 5px 0;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: #C0A060;
   white-space: nowrap;
@@ -71,7 +71,7 @@
 
 .service-text p {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
   line-height: 1.4;
   transition: color 0.3s ease;
