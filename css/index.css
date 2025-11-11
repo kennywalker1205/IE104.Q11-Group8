@@ -1,0 +1,411 @@
+main {
+  background-color: #f6f3eb;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hero-Banner */
+.hero-banner {
+  width: 100%;
+  overflow: visible;
+  margin-top: 78px;
+}
+
+.slider {
+  position: relative;
+}
+
+.slide {
+  display: none;
+}
+
+.slide-active {
+  display: block;
+}
+
+.hero-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.slider button {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #f6f3eb;
+  color: #395144;
+  border: none;
+  border-radius: 100%;
+  font-size: 25px;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  opacity: 0;
+  z-index: 10;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.hero-banner:hover .prev {
+  left: 25px;
+  opacity: 1;
+}
+
+.hero-banner:hover .next {
+  right: 25px;
+  opacity: 1;
+}
+
+.prev:hover,
+.next:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Service-bar */
+.service-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 15px 15px;
+  max-width: 1300px;
+  margin: -90px auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background-color: #f6f3eb;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 18px;
+  padding: 24px 28px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.service-text {
+  flex: 1;
+  text-align: left;
+}
+
+.service-text h3 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #c0a060;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.service-text p {
+  margin: 0;
+  font-size: 16px;
+  color: #395144;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.service-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #395144;
+  border-radius: 50%;
+}
+
+.service-icon img {
+  width: 70%;
+  height: 70%;
+  transition: all 0.3s ease;
+  filter: brightness(0) saturate(100%) invert(99%) sepia(2%) saturate(100%)
+    hue-rotate(10deg) brightness(102%) contrast(98%);
+}
+
+.service-item:hover {
+  box-shadow: 0 6px 20px rgba(192, 160, 96, 0.3);
+  transform: translateY(-2px);
+  background: #3a2820;
+}
+
+.service-item:hover .service-text h3,
+.service-item:hover .service-text p {
+  color: #fffef0;
+}
+
+.service-item:hover .service-icon {
+  background-color: #3a2820;
+}
+
+.service-item:hover .service-icon img {
+  transform: scale(1.1);
+  filter: brightness(0) saturate(100%) invert(100%) sepia(3%) saturate(562%)
+    brightness(105%) contrast(101%);
+  width: 90%;
+  height: 90%;
+}
+
+/* Collection Preview */
+.collection-preview {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.collection-preview h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #395144;
+  margin-top: 100px;
+}
+
+.collections {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.collection-item img {
+  width: 350px;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+.collection-item img:hover {
+  transform: scale(1.05);
+}
+
+/*About Preview*/
+.about-preview-container {
+  width: 100%;
+}
+
+.about-preview-img {
+  width: 100%;
+  display: block;
+}
+
+/*Featured Products*/
+.featured-products {
+  text-align: center;
+  padding: 20px 60px;
+}
+
+.featured-products h2 {
+  font-size: 2.4rem;
+  margin-bottom: 50px;
+  color: #395144;
+  font-weight: 600;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.product-item {
+  border: none;
+  padding: 20px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(192, 160, 96, 0.3);
+}
+
+.product-item img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.product-item a,
+.product-item p {
+  text-decoration: none;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  color: #395144;
+  font-weight: 500;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.price {
+  color: #c0a060;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+/* Feedback */
+#customer-feedback {
+  padding: 30px 0;
+  background-color: #f6f3eb;
+  overflow: hidden;
+}
+
+#customer-feedback h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin: 0 0 40px 0;
+  color: #395144;
+}
+
+.feedback-carousel {
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  padding: 20px 0;
+  padding-left: 40px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 40px;
+}
+
+.feedback-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.feedback-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: slide 25s linear infinite; /*Đợi có JS thì xóa*/
+}
+
+.feedback-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: #fff;
+  padding: 28px 20px;
+  gap: 20px;
+  border-radius: 10px;
+  min-width: 400px;
+  max-width: 400px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+.feedback-item:hover {
+  box-shadow: 0 6px 20px rgba(192, 160, 96, 0.3);
+  transform: scale(1.05);
+  background: #c0a060;
+}
+
+.feedback-item:last-child {
+  /* Tạo khoảng cách cho Item cuối */
+  margin-right: 40px;
+}
+
+.feedback-avatar {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  border: 2px solid #c0a060;
+}
+
+.feedback-item:hover .feedback-avatar {
+  border-color: #fffef0;
+  transform: scale(1.05);
+}
+
+.feedback-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  width: 100%;
+  position: relative;
+}
+
+.feedback-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #c0a060;
+  transition: color 0.3s ease;
+}
+
+.feedback-comment {
+  font-size: 16px;
+  color: #395144;
+  margin-top: 4px;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.feedback-item:hover .feedback-name,
+.feedback-item:hover .feedback-comment {
+  color: #fffef0;
+}
+
+.feedback-date {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  font-size: 13px;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.feedback-item:hover .feedback-date {
+  color: #fffef0;
+  opacity: 0.9;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/*Đợi có JS thì xóa*/
+.feedback-carousel:hover .feedback-track {
+  animation-play-state: paused;
+}
