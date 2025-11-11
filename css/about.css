@@ -121,7 +121,7 @@ main {
   transform: scale(1.1);
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   main {
     padding: 80px 16px;
@@ -135,3 +135,29 @@ main {
     max-width: 90%;
   }
 }
+
+@media (max-width: 430px) {
+  .about-container {
+    padding: 20px;
+  }
+
+  .authority {
+    margin-right: 0;
+  }
+
+  .cta-container {
+    padding: 20px;
+  }
+
+  .btn-primary {
+    padding: 12px 24px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  main {
+    padding: 60px 12px 40px;
+  }
+}
+
+

@@ -24,7 +24,7 @@ p.intro {
 
 /* Contact */
 .contact-info {
-  display: grid;
+  display: flex;
   grid-template-columns: 2fr 1fr;
   gap: 60px;
   margin: 60px auto;
@@ -64,7 +64,7 @@ p.intro {
   padding-left: 30px;
   color: #395144;
   line-height: 1.6;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .info-banner {
@@ -221,7 +221,7 @@ button[type="submit"]:active {
   transform: scale(0.98);
 }
 
-/* ====== RESPONSIVE ====== */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   h1 {
     text-align: center;
@@ -229,14 +229,71 @@ button[type="submit"]:active {
 
   .contact-info {
     flex-direction: column;
-    gap: 30px;
+    align-items: center;
+    gap: 40px;
   }
 
-  .contact-info .info-banner img {
-    max-width: 60%;
+  .info-text {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .info-text-item div {
+    font-size: 26px;
+  }
+  .info-text-item i {
+    font-size: 28px;
+  }
+  .info-text-item p {
+    font-size: 24px;
+  }
+
+  .info-banner img {
+    max-width: 80%;
   }
 
   .contact-form {
+    padding: 40px 20px;
+  }
+
+  .form-row {
     grid-template-columns: 1fr;
   }
 }
+
+
+@media (max-width: 430px) {
+  .info-text-item div {
+    font-size: 20px;
+  }
+  .info-text-item i {
+    font-size: 22px;
+  }
+  .info-text-item p {
+    font-size: 18px;
+  }
+
+  .business-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .radio-label {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  .radio-buttons {
+    gap: 12px;
+    width: 60%;
+  }
+
+  .radio-btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+  }
+}
+
+
