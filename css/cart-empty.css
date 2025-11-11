@@ -1,0 +1,122 @@
+/* Empty Cart Page Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background-color: #F6F3EB;
+  color: #333;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 1400px;
+  margin: 70px auto 0;
+  padding: 40px 20px;
+  min-height: calc(100vh - 400px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.empty-cart-container img {
+  width: 100%;
+  max-width: 270px;
+  height: auto;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.empty-cart-container p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.empty-cart-container p a {
+  color: #395144;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.empty-cart-container p a:hover {
+  color: #4a6d5a;
+  border-bottom: 2px solid #395144;
+}
+
+.home-button {
+  display: inline-block;
+  padding: 16px 40px;
+  background-color: #395144;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.home-button:hover {
+  background-color: #4a6d5a;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.home-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    padding: 20px 15px;
+    min-height: calc(100vh - 350px);
+  }
+
+  .empty-cart-container {
+    padding: 40px 20px;
+  }
+
+  .empty-cart-container img {
+    max-width: 250px;
+    margin-bottom: 25px;
+  }
+
+  .empty-cart-container p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .empty-cart-container {
+    padding: 30px 15px;
+  }
+
+  .empty-cart-container img {
+    max-width: 200px;
+    margin-bottom: 20px;
+  }
+
+  .empty-cart-container p {
+    font-size: 15px;
+  }
+}
