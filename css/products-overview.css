@@ -72,17 +72,32 @@ a {text-decoration: none;}
 
 /* responsive */
 @media (max-width: 768px) {
-  .page-title h1 {
-    font-size: 2rem;
-  }
-
-  .product-category h2 {
-    font-size: 1.4rem;
-  }
-
   .product-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+  }
+}
+
+@media (max-width: 430px) {
+  .page-title h1 {
+    font-size: 2.8rem;
+  }
+
+  .product-category h2 {
+    font-size: 2.1rem;
+  }
+
+  .product-name {
+    font-size: 1.4rem;
+  }
+
+  .price {
+    font-size: 1.3rem;
+  }
+
+  .product-item img {
+    width: 270px;
+    height: 270px;
   }
 }
