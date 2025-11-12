@@ -22,14 +22,22 @@ html {
 
 .slider {
   position: relative;
+  overflow: hidden;
 }
 
 .slide {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease; 
+  z-index: 0;
 }
 
 .slide-active {
-  display: block;
+  opacity: 1;
+  z-index: 1; /* slide hiện tại nằm trên cùng */
 }
 
 .hero-banner img {
@@ -307,7 +315,7 @@ html {
   display: flex;
   gap: 30px;
   width: max-content;
-  animation: slide 25s linear infinite; /*Đợi có JS thì xóa*/
+  animation: slide 50s linear infinite;  
 }
 
 .feedback-item {
@@ -405,7 +413,6 @@ html {
   }
 }
 
-/*Đợi có JS thì xóa*/
 .feedback-carousel:hover .feedback-track {
   animation-play-state: paused;
-}
+}  
