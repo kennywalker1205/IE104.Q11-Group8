@@ -416,3 +416,291 @@ html {
 .feedback-carousel:hover .feedback-track {
   animation-play-state: paused;
 }  
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet - max-width: 768px */
+@media (max-width: 768px) {
+  /* Hero Banner */
+  .hero-banner {
+    margin-top: 65px;
+  }
+
+  .slider button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .hero-banner:hover .prev {
+    left: 15px;
+  }
+
+  .hero-banner:hover .next {
+    right: 15px;
+  }
+
+  /* Service Bar */
+  .service-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 12px;
+    max-width: 90%;
+    margin: -60px auto;
+  }
+
+  .service-item {
+    padding: 18px 20px;
+    gap: 12px;
+  }
+
+  .service-text h3 {
+    font-size: 16px;
+  }
+
+  .service-text p {
+    font-size: 14px;
+  }
+
+  .service-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Collection Preview */
+  .collection-preview h2 {
+    font-size: 1.8rem;
+    margin-top: 80px;
+    margin-bottom: 25px;
+  }
+
+  .collections {
+    gap: 20px;
+  }
+
+  .collection-item img {
+    width: 280px;
+  }
+
+  /* Featured Products */
+  .featured-products {
+    padding: 20px 30px;
+  }
+
+  .featured-products h2 {
+    font-size: 2rem;
+    margin-bottom: 35px;
+  }
+
+  .product-grid {
+    gap: 30px;
+  }
+
+  .product-item {
+    padding: 15px;
+  }
+
+  .product-name {
+    font-size: 1.1rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  /* Customer Feedback */
+  #customer-feedback h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .feedback-carousel {
+    padding-left: 20px;
+    scroll-padding-left: 20px;
+  }
+
+  .feedback-item {
+    min-width: 350px;
+    max-width: 350px;
+    padding: 24px 18px;
+  }
+
+  .feedback-item:last-child {
+    margin-right: 20px;
+  }
+
+  .feedback-avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .feedback-name {
+    font-size: 16px;
+  }
+
+  .feedback-comment {
+    font-size: 14px;
+  }
+
+  .feedback-date {
+    font-size: 12px;
+  }
+}
+
+/* Mobile - max-width: 430px */
+@media (max-width: 430px) {
+  /* Hero Banner */
+  .hero-banner {
+    margin-top: 55px;
+  }
+
+  .slider button {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    padding: 3px 10px;
+  }
+
+  .hero-banner:hover .prev {
+    left: 10px;
+  }
+
+  .hero-banner:hover .next {
+    right: 10px;
+  }
+
+  /* Service Bar */
+  .service-bar {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 10px;
+    max-width: 90%;
+    margin: -40px auto;
+  }
+
+  .service-item {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .service-text h3 {
+    font-size: 14px;
+    white-space: normal;
+  }
+
+  .service-text p {
+    font-size: 12px;
+  }
+
+  .service-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  /* Collection Preview */
+  .collection-preview {
+    padding: 20px 0;
+  }
+
+  .collection-preview h2 {
+    font-size: 1.5rem;
+    margin-top: 60px;
+    margin-bottom: 20px;
+  }
+
+  .collections {
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .collection-item img {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* Featured Products */
+  .featured-products {
+    padding: 20px 15px;
+  }
+
+  .featured-products h2 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+  }
+
+  .product-item {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .product-item img {
+    margin-bottom: 12px;
+  }
+
+  .product-name {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+
+  .price {
+    font-size: 0.9rem;
+  }
+
+  /* Customer Feedback */
+  #customer-feedback {
+    padding: 20px 0;
+  }
+
+  #customer-feedback h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .feedback-carousel {
+    padding-left: 15px;
+    scroll-padding-left: 15px;
+  }
+
+  .feedback-track {
+    gap: 20px;
+  }
+
+  .feedback-item {
+    min-width: 280px;
+    max-width: 280px;
+    padding: 20px 15px;
+    gap: 15px;
+  }
+
+  .feedback-item:last-child {
+    margin-right: 15px;
+  }
+
+  .feedback-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .feedback-name {
+    font-size: 15px;
+  }
+
+  .feedback-comment {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .feedback-date {
+    font-size: 11px;
+    position: relative;
+    top: 0;
+    right: auto;
+    margin-top: 5px;
+  }
+}
