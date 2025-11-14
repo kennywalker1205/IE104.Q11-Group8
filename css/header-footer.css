@@ -314,3 +314,163 @@ footer {
 .footer-col ul li a:hover {
   opacity: 1;
 }
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet - max-width: 768px */
+@media (max-width: 768px) {
+  /* Header Adjustments */
+  .navbar {
+    padding: 1px 30px;
+  }
+
+  .navbar .logo img {
+    height: 60px;
+    margin-left: -15px;
+  }
+
+  .nav-menu {
+    gap: 40px;
+  }
+
+  .nav-menu a {
+    font-size: 16px;
+  }
+
+  .nav-icons {
+    gap: 20px;
+    margin-right: -15px;
+  }
+
+  .nav-icons a {
+    font-size: 20px;
+  }
+
+  /* Dropdown Adjustments */
+  .navbar .dropdown-menu {
+    min-width: 200px;
+    padding: 8px 0;
+  }
+
+  .dropdown-menu a {
+    font-size: 15px;
+    padding: 8px 16px;
+    margin: 4px 12px;
+  }
+
+  /* Footer Adjustments */
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .footer-top h3 {
+    font-size: 1.3rem;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .footer-bottom img {
+    height: 50px;
+  }
+}
+
+/* Mobile - max-width: 430px */
+@media (max-width: 430px) {
+  /* Header Mobile */
+  .navbar {
+    padding: 1px 15px;
+  }
+
+  .navbar .logo img {
+    height: 50px;
+    margin-left: 0;
+  }
+
+  .nav-menu {
+    gap: 15px;
+  }
+
+  .nav-menu a {
+    font-size: 13px;
+  }
+
+  .nav-icons {
+    gap: 12px;
+    margin-right: 0;
+  }
+
+  .nav-icons a {
+    font-size: 18px;
+  }
+
+  .cart-count {
+    font-size: 10px;
+    padding: 1px 4px;
+    top: -8px;
+    left: -10px;
+  }
+
+  /* Dropdown Mobile */
+  .navbar .dropdown-menu {
+    min-width: 160px;
+    padding: 6px 0;
+  }
+
+  .dropdown-menu a {
+    font-size: 13px;
+    padding: 6px 12px;
+    margin: 3px 8px;
+    width: calc(100% - 16px);
+  }
+
+  /* Footer Mobile */
+  .footer-top {
+    width: 95%;
+    padding-bottom: 15px;
+  }
+
+  .footer-top h3 {
+    font-size: 1.1rem;
+  }
+
+  .social-icons a {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .footer-content {
+    width: 95%;
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .footer-content h4 {
+    font-size: 0.95rem;
+  }
+
+  .footer-content a {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .footer-bottom {
+    padding: 12px 20px 0;
+    font-size: 0.75rem;
+  }
+
+  .footer-bottom img {
+    height: 40px;
+  }
+}
