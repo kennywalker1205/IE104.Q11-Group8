@@ -93,15 +93,12 @@ html {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  padding: 15px 15px;
+  padding: 15px;
+  width: 90%;
   max-width: 1300px;
-  margin: -90px auto;
+  margin: 20px auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
   background-color: #f6f3eb;
 }
 
@@ -113,6 +110,7 @@ html {
   padding: 24px 28px;
   border-radius: 12px;
   transition: all 0.3s ease;
+  min-width: 0;
 }
 
 .service-text {
@@ -125,7 +123,7 @@ html {
   font-size: 18px;
   font-weight: 600;
   color: #c0a060;
-  white-space: nowrap;
+  white-space: normal;
   transition: color 0.3s ease;
 }
 
@@ -189,7 +187,7 @@ html {
   font-size: 2.2rem;
   margin-bottom: 30px;
   color: #395144;
-  margin-top: 100px;
+  margin-top: 30px;
 }
 
 .collections {
@@ -419,6 +417,12 @@ html {
 
 /* ===== RESPONSIVE DESIGN ===== */
 
+@media (max-width: 1024px) {
+  .service-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Tablet - max-width: 768px */
 @media (max-width: 768px) {
   /* Hero Banner */
@@ -445,8 +449,6 @@ html {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     padding: 12px;
-    max-width: 90%;
-    margin: -60px auto;
   }
 
   .service-item {
@@ -470,7 +472,6 @@ html {
   /* Collection Preview */
   .collection-preview h2 {
     font-size: 1.8rem;
-    margin-top: 80px;
     margin-bottom: 25px;
   }
 
@@ -571,11 +572,9 @@ html {
 
   /* Service Bar */
   .service-bar {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     padding: 10px;
-    max-width: 90%;
-    margin: -40px auto;
   }
 
   .service-item {
@@ -599,23 +598,23 @@ html {
 
   /* Collection Preview */
   .collection-preview {
-    padding: 20px 0;
+    padding: 20px 15px;
   }
 
   .collection-preview h2 {
     font-size: 1.5rem;
-    margin-top: 60px;
     margin-bottom: 20px;
   }
 
   .collections {
     gap: 15px;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
   .collection-item img {
     width: 100%;
+    min-width: 140px;
     max-width: 320px;
   }
 
