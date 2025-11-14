@@ -217,6 +217,12 @@ button[type="submit"]:hover {
   color: #395144;
 }
 
+/* Popup Notification (Submitted)*/
+#submitted-popup i {
+  font-size: 20px;
+  color: #32cd32;
+}
+
 button[type="submit"]:active {
   transform: scale(0.98);
 }
