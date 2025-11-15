@@ -68,10 +68,16 @@ function addToCart(event) {
   const cartCountSpan = document.querySelector(".cart-count");
 
   // kiểm tra size đã chọn
-  const selectedSize = document.querySelector(".size-list span.active");
-  if (!selectedSize) {
-    alert("Vui lòng chọn size trước khi thêm vào giỏ hàng!");
-    return;
+  const sizeList = document.querySelector(".size-list");
+  let selectedSizeText = null;
+
+  if (sizeList) {
+    const selectedSize = sizeList.querySelector("span.active");
+    if (!selectedSize) {
+      alert("Vui lòng chọn size trước khi thêm vào giỏ hàng!");
+      return;
+    }
+    selectedSizeText = selectedSize.textContent;
   }
 
   const quantity = parseInt(quantityInput.value) || 1;
@@ -85,14 +91,17 @@ function addToCart(event) {
     name: productName,
     price: productPrice,
     quantity: quantity,
-    size: selectedSize.textContent,
+    size: selectedSizeText, 
     image: productImage
   };
 
   // kiểm tra trùng sản phẩm
-  const existingIndex = cartItems.findIndex(
-    (item) => item.id === product.id && item.size === product.size
-  );
+  const existingIndex = cartItems.findIndex((item) => {
+    if (sizeList) {
+      return item.id === product.id && item.size === product.size;
+    }
+    return item.id === product.id;
+  });
 
   if (existingIndex >= 0) {
     cartItems[existingIndex].quantity += quantity;

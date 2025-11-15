@@ -10,12 +10,13 @@ function loadCart() {
     itemDiv.setAttribute("data-id", item.id);
     itemDiv.setAttribute("data-size", item.size);
 
-    itemDiv.innerHTML = `
+    if(item.size) {
+      itemDiv.innerHTML = `
       <img src="${item.image}" alt="${item.name}" />
       <div class="item-details">
         <h3>${item.name}</h3>
         <p class="price">${item.price.toLocaleString("vi-VN")}đ</p>
-        <p>Size: ${item.size}</p>
+        <p class="size">Size: ${item.size}</p>
         <div class="quantity">
             <div class="quantity-controls">
                 <button type="button" class="quantity-btn minus">-</button>
@@ -26,6 +27,23 @@ function loadCart() {
       </div>
       <button class="delete-item-btn"><i class="fa-solid fa-trash"></i></button>
     `;
+    } else {
+      itemDiv.innerHTML = `
+      <img src="${item.image}" alt="${item.name}" />
+      <div class="item-details">
+        <h3>${item.name}</h3>
+        <p class="price">${item.price.toLocaleString("vi-VN")}đ</p>
+        <div class="quantity">
+            <div class="quantity-controls">
+                <button type="button" class="quantity-btn minus">-</button>
+                <input type="number" name="quantity" class="quantity-input" value="${item.quantity}" min="1" readonly />
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+        </div>
+      </div>
+      <button class="delete-item-btn"><i class="fa-solid fa-trash"></i></button>
+    `;
+    }
 
     cartItemsContainer.appendChild(itemDiv);
   });
@@ -49,7 +67,12 @@ function attachCartEvents() {
     const deleteBtn = itemDiv.querySelector(".delete-item-btn");
 
     plusBtn.addEventListener("click", () => {
-      const index = cartItems.findIndex((i) => i.id === id && i.size === size);
+      const index = cartItems.findIndex((item) => {
+        if(item.size) {
+          return item.id === id && item.size === size;
+        }
+        return item.id === id;
+      });
       if (index >= 0) {
         cartItems[index].quantity += 1;
         qtyInput.value = cartItems[index].quantity;
@@ -58,16 +81,31 @@ function attachCartEvents() {
     });
 
     minusBtn.addEventListener("click", () => {
-      const index = cartItems.findIndex((i) => i.id === id && i.size === size);
-      if (index >= 0 && cartItems[index].quantity > 1) {
+      const index = cartItems.findIndex((item) => {
+        if(item.size) {
+          return item.id === id && item.size === size;
+        }
+        return item.id === id;
+      });
+      if (index >= 0) {
         cartItems[index].quantity -= 1;
+        if(cartItems[index].quantity == 0) {
+          cartItems.splice(index, 1);
+          saveCart(cartItems);
+          itemDiv.remove();
+        }
         qtyInput.value = cartItems[index].quantity;
         saveCart(cartItems);
       }
     });
 
     deleteBtn.addEventListener("click", () => {
-      const index = cartItems.findIndex((i) => i.id === id && i.size === size);
+      const index = cartItems.findIndex((item) => {
+        if(item.size) {
+          return item.id === id && item.size === size;
+        }
+        return item.id === id;
+      });
       if (index >= 0) {
         cartItems.splice(index, 1);
         saveCart(cartItems);
