@@ -143,8 +143,8 @@
                   <p class="price">3.800.000đ</p>
                   <div class="quantity">
                     <div class="quantity-controls">
-                      <button type="button" class="quantity-btn minus">–</button>
-                      <input type="number" id="quantity" value="1" min="1" readonly />
+                      <button type="button" class="quantity-btn minus">-</button>
+                      <input type="number" value="1" min="1" readonly />
                       <button type="button" class="quantity-btn plus">+</button>
                     </div>
                   </div>
@@ -196,7 +196,7 @@
               <div class="voucher-input">
                 <p>Bạn có mã giảm giá khác?</p>
                 <div class="input-group">
-                  <input type="text" placeholder="Nhập mã giảm giá" />
+                  <input type="text" id="discount" placeholder="Nhập mã giảm giá" />
                   <button type="button">Áp dụng</button>
                 </div>
               </div>
@@ -206,15 +206,15 @@
             <div class="cart-summary">
               <div class="summary-row">
                 <span>Tạm tính:</span>
-                <span>3.800.000đ</span>
+                <span class="subtotal">3.800.000đ</span>
               </div>
               <div class="summary-row">
                 <span>Phí vận chuyển:</span>
-                <span>30.000đ</span>
+                <span class="shipping-fee">30.000đ</span>
               </div>
               <div class="summary-row total">
                 <span>Tổng cộng:</span>
-                <span>3.830.000đ</span>
+                <span class="total-price">3.830.000đ</span>
               </div>
             </div>
 
@@ -285,5 +285,6 @@
         <p>&copy; 2025 KNK Jewelry Store. All rights reserved.</p>
       </div>
     </footer>
+    <script src="js/cart.js"></script>
   </body>
 </html>
