@@ -116,9 +116,64 @@ function attachCartEvents() {
 
     document.querySelectorAll('input[name="voucher"]').forEach((input) => {
       input.addEventListener("change", () => {
+        // Khi chọn voucher từ list, xóa voucher manual
+        localStorage.removeItem("manual-voucher-code");
         updateCartTotal();
       });
     });
+
+    // Xử lý nút áp dụng voucher từ input
+    const applyVoucherBtn = document.getElementById("apply-voucher-btn");
+    const voucherInput = document.getElementById("discount");
+    const voucherError = document.querySelector(".voucher-error");
+
+    // Hàm xử lý áp dụng voucher
+    const applyVoucher = () => {
+      const code = voucherInput.value.trim();
+      
+      if (code === "") {
+        // Nếu input rỗng, xóa voucher manual
+        localStorage.removeItem("manual-voucher-code");
+        voucherError.style.display = "none";
+        updateCartTotal();
+        return;
+      }
+
+      if (isValidVoucher(code)) {
+        // Voucher hợp lệ
+        localStorage.setItem("manual-voucher-code", code.toUpperCase());
+        // Bỏ chọn voucher từ list
+        document.querySelectorAll('input[name="voucher"]').forEach(input => {
+          input.checked = false;
+        });
+        voucherError.textContent = "Áp dụng mã giảm giá thành công!";
+        voucherError.className = "voucher-error success";
+        voucherError.style.display = "block";
+        updateCartTotal();
+      } else {
+        // Voucher không hợp lệ
+        localStorage.removeItem("manual-voucher-code");
+        voucherError.textContent = "Mã giảm giá không hợp lệ";
+        voucherError.className = "voucher-error error";
+        voucherError.style.display = "block";
+        updateCartTotal();
+      }
+    };
+
+    // Xử lý click nút
+    if (applyVoucherBtn) {
+      applyVoucherBtn.addEventListener("click", applyVoucher);
+    }
+
+    // Xử lý nhấn Enter trong ô input
+    if (voucherInput) {
+      voucherInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          applyVoucher();
+        }
+      });
+    }
 }
 
 // Lưu cart vào localStorage và cập nhật cart-count
@@ -143,6 +198,35 @@ function updateCartCount() {
   if (cartCountSpan) cartCountSpan.textContent = totalCount;
 }
 
+// Hàm tính giảm giá dựa trên mã voucher
+function calculateDiscount(code, subtotal) {
+  let discount = 0;
+  
+  switch(code.toUpperCase()) {
+    case "WELCOME2025":
+      discount = subtotal * 0.10;
+      if (discount > 1000000) discount = 1000000;
+      break;
+    case "SUMMER2025":
+      discount = subtotal * 0.15;
+      if (discount > 700000) discount = 700000;
+      break;
+    case "SPECIAL500K":
+      if (subtotal >= 5000000) discount = 500000;
+      break;
+    default:
+      discount = 0;
+  }
+  
+  return discount;
+}
+
+// Hàm kiểm tra mã voucher có hợp lệ không
+function isValidVoucher(code) {
+  const validCodes = ["WELCOME2025", "SUMMER2025", "SPECIAL500K"];
+  return validCodes.includes(code.toUpperCase());
+}
+
 // Hàm tính tổng tiền bao gồm voucher
 function updateCartTotal() {
   const cartItems = JSON.parse(localStorage.getItem("cart-items")) || [];
@@ -154,35 +238,39 @@ function updateCartTotal() {
 
   const shippingFee = 30000;
 
-  // Voucher
+  // Kiểm tra voucher từ input hoặc từ list
+  const manualVoucherCode = localStorage.getItem("manual-voucher-code");
   const selectedVoucher = document.querySelector('input[name="voucher"]:checked');
   let discount = 0;
+  let voucherCode = "";
 
-  if (selectedVoucher) {
-    const code = selectedVoucher.value;
-    switch(code) {
-      case "WELCOME2025":
-        discount = subtotal * 0.10;
-        if (discount > 1000000) discount = 1000000;
-        break;
-      case "SUMMER2025":
-        discount = subtotal * 0.15;
-        if (discount > 700000) discount = 700000;
-        break;
-      case "SPECIAL500K":
-        if (subtotal >= 5000000) discount = 500000;
-        break;
-      default:
-        discount = 0;
-    }
+  if (manualVoucherCode) {
+    // Ưu tiên voucher từ input
+    voucherCode = manualVoucherCode;
+    discount = calculateDiscount(voucherCode, subtotal);
+  } else if (selectedVoucher) {
+    // Voucher từ list
+    voucherCode = selectedVoucher.value;
+    discount = calculateDiscount(voucherCode, subtotal);
   }
 
   const subtotalElem = document.querySelector(".subtotal");
   const totalElem = document.querySelector(".total-price");
   const shippingElem = document.querySelector(".shipping-fee");
+  const discountRow = document.querySelector(".discount-row");
+  const discountAmount = document.querySelector(".discount-amount");
 
   if (subtotalElem) subtotalElem.textContent = subtotal.toLocaleString("vi-VN") + "đ";
   if (shippingElem) shippingElem.textContent = shippingFee.toLocaleString("vi-VN") + "đ";
+  
+  // Hiển thị dòng giảm giá nếu có
+  if (discount > 0) {
+    if (discountRow) discountRow.style.display = "flex";
+    if (discountAmount) discountAmount.textContent = "-" + discount.toLocaleString("vi-VN") + "đ";
+  } else {
+    if (discountRow) discountRow.style.display = "none";
+  }
+  
   if (totalElem) totalElem.textContent = (subtotal + shippingFee - discount).toLocaleString("vi-VN") + "đ";
 }
 
@@ -215,5 +303,18 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "cart-empty.html";
   } else {
     loadCart();
+    
+    // Khôi phục voucher manual nếu có
+    const manualVoucherCode = localStorage.getItem("manual-voucher-code");
+    if (manualVoucherCode) {
+      const voucherInput = document.getElementById("discount");
+      if (voucherInput) {
+        voucherInput.value = manualVoucherCode;
+      }
+      // Bỏ chọn voucher từ list
+      document.querySelectorAll('input[name="voucher"]').forEach(input => {
+        input.checked = false;
+      });
+    }
   }
 });

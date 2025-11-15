@@ -195,7 +195,7 @@
                   <input type="radio" name="voucher" id="welcome-25-voucher" value="WELCOME2025">
                   <label for="welcome-25-voucher" class="voucher-card">
                     <div class="voucher-content">
-                      <div class="voucher-title">WELCOME</div>
+                      <div class="voucher-title">WELCOME2025</div>
                       <div class="voucher-description">Giảm 10%, tối đa 1.000.000đ cho đơn hàng đầu tiên</div>
                       <div class="voucher-expiry">HSD: 31/12/2025</div>
                     </div>
@@ -206,7 +206,7 @@
                   <input type="radio" name="voucher" id="summer-25-voucher" value="SUMMER2025">
                   <label for="summer-25-voucher" class="voucher-card">
                     <div class="voucher-content">
-                      <div class="voucher-title">SUMMER15</div>
+                      <div class="voucher-title">SUMMER2025</div>
                       <div class="voucher-description">Giảm 15%, tối đa 700.000đ</div>
                       <div class="voucher-expiry">HSD: 31/12/2025</div>
                     </div>
@@ -229,8 +229,9 @@
                 <p>Bạn có mã giảm giá khác?</p>
                 <div class="input-group">
                   <input type="text" id="discount" placeholder="Nhập mã giảm giá" />
-                  <button type="button">Áp dụng</button>
+                  <button type="button" id="apply-voucher-btn">Áp dụng</button>
                 </div>
+                <div class="voucher-error" style="display: none;"></div>
               </div>
             </div>
 
@@ -243,6 +244,10 @@
               <div class="summary-row">
                 <span>Phí vận chuyển:</span>
                 <span class="shipping-fee">30.000đ</span>
+              </div>
+              <div class="summary-row discount-row" style="display: none;">
+                <span>Giảm giá:</span>
+                <span class="discount-amount">0đ</span>
               </div>
               <div class="summary-row total">
                 <span>Tổng cộng:</span>

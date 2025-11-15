@@ -440,6 +440,20 @@ main {
   transform: scale(0.95);
 }
 
+.voucher-error {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.voucher-error.error {
+  color: #e74c3c;
+}
+
+.voucher-error.success {
+  color: #27ae60;
+}
+
 /* Cart Summary */
 .cart-summary {
   margin-bottom: 25px;
@@ -459,6 +473,16 @@ main {
 
 .summary-row:not(:last-child) {
   border-bottom: 1px solid #e0e0e0;
+}
+
+.summary-row.discount-row {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.summary-row.discount-row .discount-amount {
+  color: #e74c3c;
+  font-weight: 700;
 }
 
 .summary-row.total {
