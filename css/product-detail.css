@@ -308,17 +308,42 @@ main {
   .add-to-cart {
     width: 60%;
   }
+
+  .accordion {
+    font-size: 1.2rem;
+    width: 90%;
+  }
+
+  .product-details {
+    text-align: center;
+  }
+
+  .panel {
+    font-size: 16px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: justify;
+  }  
 }
 
 @media (max-width: 430px) {
 .product-path-section {
-    width: 610px;
-    font-size: 1.3rem;
+    width: 430px;
+    font-size: 0.8rem;
   }
 
   .product-container {
-    width: 610px;
+    width: 430px;
     gap: 40px;
+  }
+
+  .product-gallery {
+    width: 100%;
+  }
+
+  .product-info {
+    width: 100%;
+    max-width: none;
   }
 
   .main-image-container {
@@ -326,23 +351,23 @@ main {
   }
 
   .thumbnail-list img {
-    width: 120px;
+    width: 85px;
   }
 
   .product-title {
-    font-size: 2.2rem;
+    font-size: 1.9rem;
   }
 
   .current-price {
-    font-size: 26px;
+    font-size: 22px;
   }
 
   .original-price {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .discount-tag {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .product-options label {
@@ -350,7 +375,7 @@ main {
   }
 
   .size-list span {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .quantity-box button {
@@ -364,13 +389,5 @@ main {
   .add-to-cart {
     font-size: 19px;
     width: 70%;
-  }
-
-  .accordion {
-    font-size: 1.5rem;
-  }
-
-  .panel {
-    font-size: 19px;
   }
 }

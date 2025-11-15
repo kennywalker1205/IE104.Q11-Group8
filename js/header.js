@@ -34,3 +34,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 5000);
   });
 });
+
+// Chuyển đổi Nav Menu (Responsive)
+const burger = document.querySelector(".burger");
+const mobileMenu = document.querySelector(".mobile-menu");
+const overlay = document.querySelector(".mobile-overlay");
+const closeBtn = document.querySelector(".close-menu");
+const drop = document.querySelector(".mobile-dropdown");
+
+/* mở menu */
+burger.onclick = () => {
+  mobileMenu.classList.add("active");
+  overlay.classList.add("active");
+  document.body.style.overflow = "hidden"; 
+};
+
+/* đóng menu */
+closeBtn.onclick = overlay.onclick = () => {
+  mobileMenu.classList.remove("active");
+  overlay.classList.remove("active");
+  document.body.style.overflow = "auto";
+};
+
+/* mở dropdown */
+drop.addEventListener("click", () => {
+  drop.classList.toggle("open");
+});
+
+// Cập nhật số hàng trong giỏ hàng
+document.addEventListener("DOMContentLoaded", () => {
+  const cartItems = JSON.parse(localStorage.getItem("cart-items")) || [];
+  const totalCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
+  const cartCountSpan = document.querySelector(".cart-count");
+  if (cartCountSpan) cartCountSpan.textContent = totalCount;
+});

@@ -20,6 +20,12 @@
     <!--Header-->
     <header>
       <nav class="navbar">
+        <!--Responsive-->
+          <div class="burger">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+
         <div class="logo">
           <a href="../index.html">
             <img
@@ -55,6 +61,33 @@
         </div>
       </nav>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay"></div>
+
+    <!-- Mobile Side Menu -->
+    <div class="mobile-menu">
+      <div class="mobile-header">
+        <span>Menu</span>
+        <i class="fa-solid fa-xmark close-menu"></i>
+      </div>
+
+      <ul class="mobile-menu-list">
+        <li class="mobile-dropdown">
+          <a href="../products-overview.html">Sản phẩm</a>
+          <i class="fa-solid fa-chevron-down arrow"></i>
+
+          <ul class="mobile-submenu">
+            <li><a href="../rings.html">Nhẫn</a></li>
+            <li><a href="../earrings.html">Khuyên tai</a></li>
+            <li><a href="../bracelets.html">Vòng tay</a></li>
+          </ul>
+        </li>
+
+        <li><a href="../about.html">Về chúng tôi</a></li>
+        <li><a href="../contact.html">Liên hệ</a></li>
+      </ul>
+    </div>
 
     <!--Main Content-->
     <main>
@@ -237,5 +270,6 @@
       </div>
     </footer>
     <script src="../js/product-detail.js"></script>
+    <script src="../js/header.js"></script>
   </body>
 </html>
