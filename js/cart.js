@@ -186,6 +186,27 @@ function updateCartTotal() {
   if (totalElem) totalElem.textContent = (subtotal + shippingFee - discount).toLocaleString("vi-VN") + "đ";
 }
 
+// Popup thông báo Đã đặt hàng
+document.addEventListener("DOMContentLoaded", () => {
+  const checkout_button = document.querySelector(".checkout-button"); 
+  const popup = document.getElementById("submitted-popup");
+
+  checkout_button.addEventListener("click", (e) => {
+    e.preventDefault(); //Chặn chuyển tiếp
+
+    popup.classList.remove("hidden");
+    popup.classList.add("show");
+
+    setTimeout(() => {
+      popup.classList.remove("show");
+      popup.classList.add("hidden");
+    }, 5000);
+
+    form.reset();
+  });
+});
+
+
 // Khi load trang
 document.addEventListener("DOMContentLoaded", () => {
   const cartItems = JSON.parse(localStorage.getItem("cart-items")) || [];

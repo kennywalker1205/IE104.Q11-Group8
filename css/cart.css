@@ -494,6 +494,12 @@ main {
   transform: scale(0.98);
 }
 
+/* Popup Notification (Đặt hàng)*/
+#submitted-popup i {
+  font-size: 20px;
+  color: #32cd32;
+}
+
 /* ===== RESPONSIVE DESIGN ===== */
 
 /* Tablet - max-width: 768px */
@@ -614,6 +620,10 @@ main {
   .checkout-button {
     padding: 14px;
     font-size: 15px;
+  }
+
+  #submitted-popup  {
+    left: 30%;
   }
 }
 
@@ -828,5 +838,9 @@ main {
   .checkout-button {
     padding: 14px;
     font-size: 14px;
+  }
+
+  #submitted-popup  {
+    left: 12%;
   }
 }
