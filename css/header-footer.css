@@ -23,9 +23,10 @@ header {
   transition: transform 0.3s ease;
 }
 
-.mobile-overlay, .mobile-menu {
+.mobile-overlay,
+.mobile-menu {
   display: none;
-} 
+}
 
 .navbar {
   max-width: 100%;
@@ -391,7 +392,7 @@ footer {
 
   .logo img {
     height: 60px;
-    margin-left: 0
+    margin-left: 0;
   }
 
   .nav-icons {
@@ -508,8 +509,13 @@ footer {
     transform: rotate(180deg);
   }
 
+  /*Pop-up*/
+  .popup {
+    left: 33%;
+  }
+
   /*Footer*/
-   .footer-top {
+  .footer-top {
     flex-direction: column;
     gap: 15px;
     justify-content: space-between;
@@ -540,17 +546,17 @@ footer {
   header {
     width: 100%;
     height: auto;
-    overflow: visible; 
+    overflow: visible;
   }
 
   .navbar {
-    padding: 6px 18px; 
+    padding: 6px 18px;
     gap: 8px;
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap;
   }
 
   .navbar .logo img {
-    height: 45px; 
+    height: 45px;
   }
 
   .burger {
@@ -566,8 +572,13 @@ footer {
     font-size: 19px;
   }
 
+  /*Pop-up*/
+  .popup {
+    left: 21%;
+  }
+
   /* Footer */
-   .footer-top {
+  .footer-top {
     width: 95%;
     padding-bottom: 15px;
   }
@@ -606,4 +617,3 @@ footer {
     height: 40px;
   }
 }
-

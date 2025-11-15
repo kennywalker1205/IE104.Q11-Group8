@@ -417,13 +417,6 @@ html {
 
 /* ===== RESPONSIVE DESIGN ===== */
 
-@media (max-width: 1024px) {
-  .service-bar {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Tablet - max-width: 768px */
 @media (max-width: 768px) {
   /* Hero Banner */
   .hero-banner {
@@ -572,33 +565,33 @@ html {
 
   /* Service Bar */
   .service-bar {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 12px;
     padding: 10px;
   }
 
   .service-item {
-    padding: 15px;
-    gap: 10px;
+    padding: 10px;
+    gap: 15px;
   }
 
   .service-text h3 {
-    font-size: 14px;
+    font-size: 18px;
     white-space: normal;
   }
 
   .service-text p {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .service-icon {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
   }
 
   /* Collection Preview */
   .collection-preview {
-    padding: 20px 15px;
+    padding: 0 15px 15px;
   }
 
   .collection-preview h2 {
@@ -673,7 +666,7 @@ html {
   .feedback-item {
     min-width: 280px;
     max-width: 280px;
-    padding: 20px 15px;
+    padding: 15px 15px;
     gap: 15px;
   }
 
@@ -682,12 +675,12 @@ html {
   }
 
   .feedback-avatar {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
   }
 
   .feedback-name {
-    font-size: 15px;
+    font-size: 17px;
   }
 
   .feedback-comment {
@@ -696,10 +689,9 @@ html {
   }
 
   .feedback-date {
-    font-size: 11px;
+    font-size: 13px;
     position: relative;
     top: 0;
     right: auto;
-    margin-top: 5px;
   }
 }
