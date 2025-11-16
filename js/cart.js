@@ -49,6 +49,7 @@ function loadCart() {
   });
 
   attachCartEvents();
+  checkoutEvent();
   updateCartCount();
   updateCartTotal();
 }
@@ -130,7 +131,7 @@ function attachCartEvents() {
     // Hàm xử lý áp dụng voucher
     const applyVoucher = () => {
       const code = voucherInput.value.trim();
-      
+
       if (code === "") {
         // Nếu input rỗng, xóa voucher manual
         localStorage.removeItem("manual-voucher-code");
@@ -143,7 +144,7 @@ function attachCartEvents() {
         // Voucher hợp lệ
         localStorage.setItem("manual-voucher-code", code.toUpperCase());
         // Bỏ chọn voucher từ list
-        document.querySelectorAll('input[name="voucher"]').forEach(input => {
+        document.querySelectorAll('input[name="voucher"]').forEach((input) => {
           input.checked = false;
         });
         voucherError.textContent = "Áp dụng mã giảm giá thành công!";
@@ -214,6 +215,9 @@ function calculateDiscount(code, subtotal) {
     case "SPECIAL500K":
       if (subtotal >= 5000000) discount = 500000;
       break;
+    case "FREESHIP":
+      discount = 30000;
+      break;
     default:
       discount = 0;
   }
@@ -223,7 +227,7 @@ function calculateDiscount(code, subtotal) {
 
 // Hàm kiểm tra mã voucher có hợp lệ không
 function isValidVoucher(code) {
-  const validCodes = ["WELCOME2025", "SUMMER2025", "SPECIAL500K"];
+  const validCodes = ["WELCOME2025", "SUMMER2025", "SPECIAL500K", "FREESHIP"];
   return validCodes.includes(code.toUpperCase());
 }
 
@@ -275,13 +279,11 @@ function updateCartTotal() {
 }
 
 // Popup thông báo Đã đặt hàng
-document.addEventListener("DOMContentLoaded", () => {
-  const checkout_button = document.querySelector(".checkout-button"); 
+function checkoutEvent() {
+  const checkout_button = document.querySelector(".checkout-button");
   const popup = document.getElementById("submitted-popup");
 
-  checkout_button.addEventListener("click", (e) => {
-    e.preventDefault(); //Chặn chuyển tiếp
-
+  checkout_button.addEventListener("click", () => {
     popup.classList.remove("hidden");
     popup.classList.add("show");
 
@@ -290,9 +292,13 @@ document.addEventListener("DOMContentLoaded", () => {
       popup.classList.add("hidden");
     }, 5000);
 
-    form.reset();
+    setTimeout(() => {
+      localStorage.clear();
+      window.location.href = "index.html";
+    }, 2000);
+    
   });
-});
+}
 
 
 // Khi load trang

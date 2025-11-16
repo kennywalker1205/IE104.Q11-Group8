@@ -190,6 +190,7 @@ main {
   gap: 15px;
   align-items: flex-start;
   position: relative;
+  padding-bottom: 15px;
 }
 
 .cart-item img {
@@ -210,6 +211,10 @@ main {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.item-details .size {
+  font-size: 15px;
 }
 
 .delete-item-btn {
