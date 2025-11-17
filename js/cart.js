@@ -187,7 +187,7 @@ function saveCart(cartItems) {
   if (cartCountSpan) cartCountSpan.textContent = totalCount;
 
   updateCartTotal();
-  location.reload();
+ // location.reload();
 }
 
 // Cập nhật cart-count khi load trang
