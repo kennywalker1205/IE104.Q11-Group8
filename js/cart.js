@@ -94,6 +94,7 @@ function attachCartEvents() {
           cartItems.splice(index, 1);
           saveCart(cartItems);
           itemDiv.remove();
+          location.reload();
         }
         qtyInput.value = cartItems[index].quantity;
         saveCart(cartItems);
@@ -111,6 +112,7 @@ function attachCartEvents() {
         cartItems.splice(index, 1);
         saveCart(cartItems);
         itemDiv.remove();
+        location.reload();
       }
     });
   });
