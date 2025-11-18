@@ -8,9 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (currentScrollY > lastScrollY) {
       // Cuộn xuống → ẩn header
+      console.log("Cuộn xuống ẩn Header");
       header.classList.add("hidden");
     } else {
-      // Cuộn lên → hiện header
+      console.log("Cuộn lên hiện Header");
       header.classList.remove("hidden");
     }
 
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     popup.classList.remove("hidden");
     popup.classList.add("show");
+    console.log("Hiện popup tìm kiếm");
 
     setTimeout(() => {
       popup.classList.remove("show");
@@ -44,6 +46,7 @@ const drop = document.querySelector(".mobile-dropdown");
 
 /* mở menu */
 burger.onclick = () => {
+  console.log("Mở menu Burger");
   mobileMenu.classList.add("active");
   overlay.classList.add("active");
   document.body.style.overflow = "hidden"; 
@@ -51,6 +54,7 @@ burger.onclick = () => {
 
 /* đóng menu */
 closeBtn.onclick = overlay.onclick = () => {
+  console.log("Đóng menu Burger");
   mobileMenu.classList.remove("active");
   overlay.classList.remove("active");
   document.body.style.overflow = "auto";
@@ -67,5 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   const cartCountSpan = document.querySelector(".cart-count");
-  if (cartCountSpan) cartCountSpan.textContent = totalCount;
+  if (cartCountSpan) {
+    cartCountSpan.textContent = totalCount;
+    console.log("Cập nhật số hàng trong giỏ: " + totalCount);
+  }
 });
