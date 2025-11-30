@@ -6,6 +6,7 @@ main {
 .product-path-section {
   max-width: 1200px;
   margin: 10px auto 10px;  
+  padding: 0 20px;
   font-size: 1rem;
   font-family: "SVN-Gilroy", sans-serif;
 }
@@ -27,6 +28,7 @@ main {
   gap: 80px;
   max-width: 1200px;
   margin: 30px auto;
+  padding: 0 20px;
 }
 
 /* gallery */
@@ -37,8 +39,6 @@ main {
 }
 
 .main-image-container {
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -47,19 +47,20 @@ main {
 
 .main-image {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
 }
 
 .thumbnail-list {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   margin-top: 20px;
   align-self: center;
 }
 
 .thumbnail-list img {
-  width: 130px;
+  width: calc((100% - 30px) / 4);
+  height: auto;
   border-radius: 1px;
   cursor: pointer;
   object-fit: cover;
@@ -75,8 +76,6 @@ main {
 
 /* product info */
 .product-info {
-  flex: 1;
-  max-width: 520px;
   display: flex;
   flex-direction: column;
 }
@@ -272,15 +271,26 @@ main {
 }
 
 /* responsive */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .product-container {
     grid-template-columns: 1fr;
-    align-items: center;
     gap: 60px;
   }
 
   .breadcrumb {
     text-align: center;
+  }
+
+  .product-gallery {
+    align-items: center;
+  }
+
+  .main-image-container {
+    width: 70%;
+  }
+
+  .thumbnail-list {
+    width: 85%;
   }
 
   .product-options label {
@@ -294,15 +304,6 @@ main {
   .product-info {
     align-items: center;
     max-width: 100%;
-  }
-
-  .main-image-container {
-    align-self: center;
-    max-width: 400px;   
-  }
-
-  .thumbnail-list {
-    justify-content: center;
   }
 
   .add-to-cart {
@@ -326,19 +327,27 @@ main {
   }  
 }
 
+@media (max-width: 768px) {
+  .main-image-container {
+    width: 80%;
+  }
+
+  .thumbnail-list {
+    width: 90%;
+  }
+}
+
 @media (max-width: 430px) {
-.product-path-section {
-    width: 430px;
-    font-size: 0.8rem;
+  .product-path-section {
+    font-size: 1rem;
   }
 
   .product-container {
-    width: 430px;
     gap: 40px;
   }
 
   .product-gallery {
-    width: 100%;
+    align-items: center;
   }
 
   .product-info {
@@ -347,11 +356,7 @@ main {
   }
 
   .main-image-container {
-    max-width: 80%;
-  }
-
-  .thumbnail-list img {
-    width: 85px;
+    width: 80%;
   }
 
   .product-title {
