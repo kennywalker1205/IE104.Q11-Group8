@@ -474,6 +474,7 @@ html {
 
   .collection-item img {
     width: 280px;
+    height: 280px;
   }
 
   /* Featured Products */
@@ -606,9 +607,8 @@ html {
   }
 
   .collection-item img {
-    width: 100%;
-    min-width: 140px;
-    max-width: 320px;
+    width: 250px;
+    height: 250px;
   }
 
   /* Featured Products */
